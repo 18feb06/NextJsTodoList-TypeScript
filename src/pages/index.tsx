@@ -7,7 +7,7 @@ export interface todo {
   isDone: boolean
 }
 
-export default function Home({name}: {name: string}) {
+export default function Home() {
   const [todos, setTodos] = useState<todo[]>([]);
 
   return (
@@ -37,19 +37,8 @@ export default function Home({name}: {name: string}) {
           })}
         </div>
       </div>
-      <h1>{name}</h1>
     </div>
   )
 }
 
 
-export async function getServerSideProps() {
-  const response = await fetch('https://next-js-todo-list-typescript-by-tameemasim.vercel.app/api/hello');
-  const res = await response.json();
-
-  return {
-    props: {
-      name: res.name 
-    }
-  }
-}
