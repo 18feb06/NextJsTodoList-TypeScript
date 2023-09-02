@@ -12,7 +12,7 @@ export default function Home() {
 
   return (
     <div className="w-screen">
-      <h1 className="text-center text-black bg-white text-md font-mono">Open for contribution: <a href="https://github.com/18feb06/NextJsTodoList-TypeScript">Click Here</a></h1>
+      <h1 className="text-center text-black bg-white text-md font-mono">Open for contribution: <a className="text-blue-500 underline" href="https://github.com/18feb06/NextJsTodoList-TypeScript">Click Here</a></h1>
       <h1 className="sm:text-7xl md:text-9xl font-normal text-white mx-auto mt-20 mb-11 text-center ">Task Master</h1>
       <SearchInput todos={todos} setTodos={setTodos}/>
       <div className="mt-6 sm:block md:flex w-[90%] mx-auto">
