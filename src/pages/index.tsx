@@ -7,7 +7,7 @@ export interface todo {
   isDone: boolean
 }
 
-export default function Home() {
+export default function Home({name}: {name: string}) {
   const [todos, setTodos] = useState<todo[]>([]);
 
   return (
@@ -37,6 +37,19 @@ export default function Home() {
           })}
         </div>
       </div>
+      <h1>{name}</h1>
     </div>
   )
+}
+
+
+export async function getServerSideProps() {
+  const response = await fetch('http://localhost:3000/api/hello');
+  const res = await response.json();
+
+  return {
+    props: {
+      name: res.name 
+    }
+  }
 }
