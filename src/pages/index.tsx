@@ -44,7 +44,7 @@ export default function Home({name}: {name: string}) {
 
 
 export async function getServerSideProps() {
-  const response = await fetch('http://localhost:3000/api/hello');
+  const response = await fetch('https://next-js-todo-list-typescript-by-tameemasim.vercel.app/api/hello');
   const res = await response.json();
 
   return {
